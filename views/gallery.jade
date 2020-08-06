@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= gallery
+        |  - 
+        = title
+    a(href="#{prefixPath}")
+        &larr;
+    ul.images
+        each file in files
+            li
+                a(href="#{prefixPath}images/galleries#{file.link}")
+                    img(src="#{prefixPath}images-thumbnail/galleries#{file.link}")
+                    span.label
+                        = file.name

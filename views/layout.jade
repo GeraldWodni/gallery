@@ -1,0 +1,14 @@
+doctype html
+
+include mixins
+html(lang=__locale.currentRoot)
+    head
+        title= title
+        +favicon("/images/favicon.ico")
+        +style(`${prefixPath}css/index.css`)
+        +style(`${prefixPath}css/font-awesome.min.css`)
+        +styles
+    body
+        #content
+            block content
+        block scripts
