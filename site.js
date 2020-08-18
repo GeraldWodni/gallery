@@ -8,6 +8,7 @@ module.exports = {
         const imageRootDir = "images/galleries"
         const title = process.env.KERN_GALLERY_TITLE;
         const prefixPath = process.env.KERN_GALLERY_PREFIX;
+        const ignoreGalleries = process.env.KERN_GALLERY_IGNORE || "";
         const timeout = (process.env.KERN_GALLERY_CACHE_TIMEOUT || 10) * 60 * 1000;
 
         /* resized images */
@@ -19,6 +20,7 @@ module.exports = {
         function vals( req, obj ) {
             return Object.assign( {
                 prefixPath: prefixPath,
+                ignoreGalleries: ignoreGalleries.split(";"),
                 title: title
             }, obj );
         }

@@ -65,5 +65,10 @@ spec:
                 sh 'docker push ${REG_HOSTNAME}/${REG_FOLDER}/gallery:latest'
             }
         }
+        stage("deploy") {
+            container('docker') {
+                sh 'wget http://deployer/patch-image/kernjs/gallery/${BUILD_NUMBER}'
+            }
+        }
     }
 }

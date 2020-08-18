@@ -4,7 +4,7 @@ block content
     h1= title
     ul.galleries
         each dir, dirName in tree.dirs
-            if dir.files.length > 0
+            if ignoreGalleries.indexOf(dirName)<0 && dir.files.length > 0
                 li
                     a(href="#{prefixPath}gallery/#{dirName}")
                         img(src="#{prefixPath}images-thumbnail/galleries/#{dir.files[0].link}")
