@@ -71,3 +71,80 @@ ul li a span {
     display: block;
     padding: 0.5rem 1rem;
 }
+
+/* modal */
+#modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#modal a.next,
+#modal a.prev,
+#modal a.download,
+#modal a.close {
+    display: block;
+
+    position: absolute;
+    top: 0;
+
+    padding: 10px;
+
+    background-color: transparent;
+    cursor: pointer;
+
+    font-family: sans-serif;
+    font-size: 50px;
+    transition: color 250ms, font-size 250ms;
+}
+
+#modal a.next:hover,
+#modal a.prev:hover,
+#modal a.download:hover,
+#modal a.close:hover {
+    font-size: 100px;
+    color: #000;
+    text-shadow: 0 0 1px #333, 0 0 3px #FFF;
+}
+
+#modal a.download span,
+#modal a.close span {
+    font-size: 40%;
+}
+
+#modal a.next,
+#modal a.prev {
+    width: 50%;
+    height: 100vh;
+
+    line-height: 100vh;
+}
+
+#modal a.next {
+    right: 0;
+    text-align: right;
+}
+
+#modal a.close {
+    right: 0;
+}
+
+/* pre-loader tags, not to be displayed */
+#modal img.next,
+#modal img.first,
+#modal img.prev {
+    display: none;
+}
+
+#modal img {
+    border: 3px solid red;
+    max-height: 200px;
+}

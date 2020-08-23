@@ -15,3 +15,23 @@ block content
                     img(loading=index++<5?"eager":"lazy" src="#{prefixPath}images-thumbnail/galleries#{file.link}")
                     span.label
                         = file.name
+    div#modal
+        a.prev
+            &larr;
+        a.next
+            &rarr;
+        a.download
+            | &darr;
+            span download
+        a.close
+            | ×
+        if files.length > 0
+            img(src="#{prefixPath}images/galleries#{files[0].link}"                     loading="eager" alt="first").first
+            img(src="#{prefixPath}images/galleries#{files[files.length>1?1:0].link}"    loading="eager" alt="next").next
+            img(src="#{prefixPath}images/galleries#{files[files.length-1].link}"        loading="eager" alt="prev").prev
+        else
+            img(src="/images/favicon.ico" loading="eager" alt="main").main
+            img(src="/images/favicon.ico" loading="eager" alt="next").next
+            img(src="/images/favicon.ico" loading="eager" alt="prev").prev
+
+    script(type="module" src="/js/gallery.js")
