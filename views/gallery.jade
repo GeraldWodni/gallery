@@ -8,9 +8,10 @@ block content
     a(href="#{prefixPath}").back
         &larr;
     ul.images
+        - var index = 0;
         each file in files
             li
                 a(href="#{prefixPath}images/galleries#{file.link}")
-                    img(loading="lazy" src="#{prefixPath}images-thumbnail/galleries#{file.link}")
+                    img(loading=index++<5?"eager":"lazy" min-height="200" src="#{prefixPath}images-thumbnail/galleries#{file.link}")
                     span.label
                         = file.name
