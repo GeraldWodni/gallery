@@ -64,6 +64,7 @@ ul li a:hover {
 
 ul li a img {
     display: block;
+    min-height: 200px;
 }
 
 ul li a span {
