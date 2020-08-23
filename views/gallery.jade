@@ -11,6 +11,6 @@ block content
         each file in files
             li
                 a(href="#{prefixPath}images/galleries#{file.link}")
-                    img(src="#{prefixPath}images-thumbnail/galleries#{file.link}")
+                    img(loading="lazy" src="#{prefixPath}images-thumbnail/galleries#{file.link}")
                     span.label
                         = file.name
