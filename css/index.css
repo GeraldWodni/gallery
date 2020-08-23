@@ -43,6 +43,7 @@ a:hover {
 
 ul {
     padding-left: 20px;
+    padding-right: 20px;
     list-style: none;
     text-align: center;
 }
@@ -70,6 +71,14 @@ ul li a img {
 ul li a span {
     display: block;
     padding: 0.5rem 1rem;
+}
+
+/* responsive */
+@media( max-width: 767px ) {
+    ul li a img {
+        width: 100%;
+        min-height: auto;
+    }
 }
 
 /* modal */
