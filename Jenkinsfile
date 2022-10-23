@@ -9,6 +9,8 @@ spec:
     - sleep
     args:
     - 99d
+    securityContext:
+      privileged: true
     env:
       - name: REG_USERNAME
         valueFrom:
@@ -42,7 +44,7 @@ spec:
         }
         stage("dockerfile") {
             container('buildah') {
-                sh 'buildah version && DOCKER_BUILDKIT=1 \
+                sh 'buildah version && \
                 buildah build \
                 --build-arg REG_HOSTNAME=${REG_HOSTNAME} \
                 --build-arg REG_FOLDER=${REG_FOLDER} \
