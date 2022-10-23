@@ -58,10 +58,5 @@ spec:
                 sh 'buildah push ${REG_HOSTNAME}/${REG_FOLDER}/gallery:latest'
             }
         }
-        stage("deploy") {
-            container('buildah') {
-                sh 'wget http://deployer/patch-image/kernjs/gallery/${BUILD_NUMBER}'
-            }
-        }
     }
 }
