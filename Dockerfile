@@ -10,4 +10,4 @@ RUN npm install
 
 WORKDIR /usr/src/app
 
-USER root
+#USER root
